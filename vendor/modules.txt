@@ -200,13 +200,14 @@ github.com/mitchellh/hashstructure
 github.com/mitchellh/mapstructure
 # github.com/mitchellh/reflectwalk v1.0.0
 github.com/mitchellh/reflectwalk
-# github.com/newrelic/go-agent v2.5.0+incompatible
+# github.com/newrelic/go-agent v2.7.0+incompatible
 github.com/newrelic/go-agent
 github.com/newrelic/go-agent/internal
 github.com/newrelic/go-agent/internal/logger
 github.com/newrelic/go-agent/internal/utilization
 github.com/newrelic/go-agent/internal/cat
 github.com/newrelic/go-agent/internal/jsonx
+github.com/newrelic/go-agent/internal/racedetector
 github.com/newrelic/go-agent/internal/sysinfo
 # github.com/oklog/run v1.0.0
 github.com/oklog/run
