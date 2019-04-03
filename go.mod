@@ -12,7 +12,7 @@ require (
 	github.com/mattn/go-isatty v0.0.7 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/newrelic/go-agent v2.5.0+incompatible
-	github.com/paultyng/go-newrelic/v4 v4.1.0
+	github.com/paultyng/go-newrelic/v4 v4.2.0
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/ulikunitz/xz v0.5.6 // indirect
 	github.com/vmihailenco/msgpack v4.0.2+incompatible // indirect
