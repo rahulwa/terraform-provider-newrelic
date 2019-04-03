@@ -460,6 +460,7 @@ func (d *InstanceDiff) Apply(attrs map[string]string, schema *configschema.Block
 
 func (d *InstanceDiff) applyBlockDiff(path []string, attrs map[string]string, schema *configschema.Block) (map[string]string, error) {
 	result := map[string]string{}
+
 	name := ""
 	if len(path) > 0 {
 		name = path[len(path)-1]
@@ -596,8 +597,7 @@ func (d *InstanceDiff) applyBlockDiff(path []string, attrs map[string]string, sc
 			}
 		}
 
-		countAddr := strings.Join(append(path, n, "#"), ".")
-		if countDiff, ok := d.Attributes[countAddr]; ok {
+		if countDiff, ok := d.Attributes[strings.Join(append(path, n, "#"), ".")]; ok {
 			if countDiff.NewComputed {
 				result[localBlockPrefix+"#"] = hcl2shim.UnknownVariableValue
 			} else {
@@ -633,8 +633,6 @@ func (d *InstanceDiff) applyBlockDiff(path []string, attrs map[string]string, sc
 					}
 				}
 			}
-		} else if origCount, ok := attrs[countAddr]; ok && keepBlock {
-			result[localBlockPrefix+"#"] = origCount
 		} else {
 			result[localBlockPrefix+"#"] = countFlatmapContainerValues(localBlockPrefix+"#", result)
 		}

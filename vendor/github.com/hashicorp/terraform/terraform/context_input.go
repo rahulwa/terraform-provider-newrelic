@@ -1,7 +1,6 @@
 package terraform
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"sort"
@@ -26,8 +25,6 @@ func (c *Context) Input(mode InputMode) tfdiags.Diagnostics {
 		log.Printf("[TRACE] Context.Input: uiInput is nil, so skipping")
 		return diags
 	}
-
-	ctx := context.Background()
 
 	if mode&InputModeVar != 0 {
 		log.Printf("[TRACE] Context.Input: Prompting for variables")
@@ -63,7 +60,7 @@ func (c *Context) Input(mode InputMode) tfdiags.Diagnostics {
 			retry := 0
 			for {
 				var err error
-				rawValue, err = c.uiInput.Input(ctx, &InputOpts{
+				rawValue, err = c.uiInput.Input(&InputOpts{
 					Id:          fmt.Sprintf("var.%s", n),
 					Query:       fmt.Sprintf("var.%s", n),
 					Description: v.Description,
@@ -211,7 +208,7 @@ func (c *Context) Input(mode InputMode) tfdiags.Diagnostics {
 				}
 
 				log.Printf("[TRACE] Context.Input: Prompting for %s argument %s", pa, key)
-				rawVal, err := input.Input(ctx, &InputOpts{
+				rawVal, err := input.Input(&InputOpts{
 					Id:          key,
 					Query:       key,
 					Description: attrS.Description,
