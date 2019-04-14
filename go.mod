@@ -19,6 +19,6 @@ require (
 	github.com/zclconf/go-cty v0.0.0-20190402204003-fd76348b9329 // indirect
 	golang.org/x/sys v0.0.0-20190225065934-cc5685c2db12 // indirect
 	google.golang.org/genproto v0.0.0-20190219182410-082222b4a5c5 // indirect
-	gopkg.in/jarcoal/httpmock.v1 v1.0.0-20190204112747-618f46f3f0c8 // indirect
+	gopkg.in/jarcoal/httpmock.v1 v1.0.2 // indirect
 	gopkg.in/resty.v1 v1.12.0 // indirect
 )
